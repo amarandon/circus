@@ -22,7 +22,7 @@ class TestFlapping(TestCircus):
     @patch.object(Flapping, 'check')
     def test_reap_message_calls_check(self, check_mock):
         plugin = self._flapping_plugin()
-        topic = 'watcher.test.reap'
+        topic = b'watcher.test.reap'
 
         plugin.handle_recv([topic, None])
 
