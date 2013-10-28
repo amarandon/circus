@@ -54,7 +54,7 @@ class Flapping(CircusPlugin):
 
     def handle_recv(self, data):
         topic, msg = data
-        topic_parts = topic.split(".")
+        topic_parts = topic.decode().split(".")
         if topic_parts[2] == "reap":
             timeline = self.timelines.get(topic_parts[1], [])
             timeline.append(time.time())
